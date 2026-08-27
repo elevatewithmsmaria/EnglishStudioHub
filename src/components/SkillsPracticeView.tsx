@@ -506,59 +506,59 @@ export const SkillsPracticeView: React.FC<SkillsPracticeViewProps> = ({
   return (
     <div className="mx-auto max-w-7xl px-3 sm:px-6 py-2 sm:py-4 space-y-6">
       {/* 1. Master Header Banner */}
-      <div className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 sm:p-8 shadow-xs relative overflow-hidden">
+      <div className="rounded-3xl border border-indigo-200/80 bg-white p-5 sm:p-8 shadow-xs relative overflow-hidden">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#F7F5F0] border border-[#1A1A1A]/10 px-3 py-1 text-xs font-bold text-[#1A1A1A]">
-              <Award size={14} className="text-[#C25E3E]" />
+            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-3.5 py-1 text-xs font-bold text-white shadow-2xs">
+              <Award size={14} className="text-amber-300" />
               <span>4-Skills Practice Test Studio • Listening, Reading, Writing & Speaking</span>
             </div>
-            <h1 className="text-2xl sm:text-4xl font-serif italic font-black text-[#1A1A1A] tracking-tight">
+            <h1 className="text-2xl sm:text-4xl font-serif italic font-black text-gray-900 tracking-tight">
               Four Core Language Skills Center
             </h1>
-            <p className="text-xs sm:text-sm text-[#1A1A1A]/70 font-sans leading-relaxed">
-              Elevate your English proficiency through authentic multimedia practice tests: audio comprehension with speed controls, timed reading passages, live writing evaluations with rubric feedback, and microphone speech evaluation.
+            <p className="text-xs sm:text-sm text-gray-600 font-sans leading-relaxed">
+              Prepared and created by <a href="https://www.facebook.com/elevatewithmsmaria" target="_blank" rel="noopener noreferrer" className="font-serif italic font-bold text-indigo-700 underline hover:text-indigo-900">Ms. Maria</a>. Enhance your English proficiency through authentic multimedia practice tests: audio comprehension with speed controls, timed reading passages, live writing evaluations with rubric feedback, and microphone speech evaluation.
             </p>
           </div>
 
           {/* Quick stats pills */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 shrink-0">
-            <div className="p-3 rounded-2xl bg-[#F7F5F0] border border-[#1A1A1A]/10 text-center">
-              <div className="flex items-center justify-center gap-1 text-[#1A1A1A] font-bold text-xs">
-                <Headphones size={14} className="text-[#4A5D4E]" />
+            <div className="p-3 rounded-2xl bg-emerald-50/80 border border-emerald-200 text-center shadow-2xs">
+              <div className="flex items-center justify-center gap-1 text-emerald-900 font-bold text-xs">
+                <Headphones size={14} className="text-emerald-600" />
                 <span>Listening</span>
               </div>
-              <div className="text-lg font-serif font-bold text-[#1A1A1A] mt-0.5">
+              <div className="text-lg font-serif font-bold text-emerald-950 mt-0.5">
                 {LISTENING_TESTS.length} Tests
               </div>
             </div>
 
-            <div className="p-3 rounded-2xl bg-[#F7F5F0] border border-[#1A1A1A]/10 text-center">
-              <div className="flex items-center justify-center gap-1 text-[#1A1A1A] font-bold text-xs">
-                <BookOpen size={14} className="text-[#3E5C76]" />
+            <div className="p-3 rounded-2xl bg-sky-50/80 border border-sky-200 text-center shadow-2xs">
+              <div className="flex items-center justify-center gap-1 text-sky-900 font-bold text-xs">
+                <BookOpen size={14} className="text-sky-600" />
                 <span>Reading</span>
               </div>
-              <div className="text-lg font-serif font-bold text-[#1A1A1A] mt-0.5">
+              <div className="text-lg font-serif font-bold text-sky-950 mt-0.5">
                 {READING_TESTS.length} Tests
               </div>
             </div>
 
-            <div className="p-3 rounded-2xl bg-[#F7F5F0] border border-[#1A1A1A]/10 text-center">
-              <div className="flex items-center justify-center gap-1 text-[#1A1A1A] font-bold text-xs">
-                <PenTool size={14} className="text-[#C25E3E]" />
+            <div className="p-3 rounded-2xl bg-amber-50/80 border border-amber-200 text-center shadow-2xs">
+              <div className="flex items-center justify-center gap-1 text-amber-900 font-bold text-xs">
+                <PenTool size={14} className="text-amber-600" />
                 <span>Writing</span>
               </div>
-              <div className="text-lg font-serif font-bold text-[#1A1A1A] mt-0.5">
+              <div className="text-lg font-serif font-bold text-amber-950 mt-0.5">
                 {WRITING_TESTS.length} Tests
               </div>
             </div>
 
-            <div className="p-3 rounded-2xl bg-[#F7F5F0] border border-[#1A1A1A]/10 text-center">
-              <div className="flex items-center justify-center gap-1 text-[#1A1A1A] font-bold text-xs">
-                <Mic size={14} className="text-[#7B4B94]" />
+            <div className="p-3 rounded-2xl bg-purple-50/80 border border-purple-200 text-center shadow-2xs">
+              <div className="flex items-center justify-center gap-1 text-purple-900 font-bold text-xs">
+                <Mic size={14} className="text-purple-600" />
                 <span>Speaking</span>
               </div>
-              <div className="text-lg font-serif font-bold text-[#1A1A1A] mt-0.5">
+              <div className="text-lg font-serif font-bold text-purple-950 mt-0.5">
                 {SPEAKING_TESTS.length} Tests
               </div>
             </div>
@@ -566,7 +566,7 @@ export const SkillsPracticeView: React.FC<SkillsPracticeViewProps> = ({
         </div>
 
         {/* Four-Skill Tab Switcher */}
-        <div className="mt-6 pt-6 border-t border-[#1A1A1A]/10 flex flex-wrap items-center justify-between gap-4">
+        <div className="mt-6 pt-6 border-t border-gray-100 flex flex-wrap items-center justify-between gap-4">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full md:w-auto">
             <button
               id="tab-skill-listening"
@@ -578,10 +578,10 @@ export const SkillsPracticeView: React.FC<SkillsPracticeViewProps> = ({
                 setActiveWritingTest(null);
                 setActiveSpeakingTest(null);
               }}
-              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all ${
+              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl font-bold text-xs sm:text-sm transition-all shadow-2xs ${
                 activeSkill === 'listening'
-                  ? 'bg-[#1A1A1A] text-white shadow-xs'
-                  : 'bg-[#F7F5F0] text-[#1A1A1A]/70 hover:bg-[#EAE6DF] hover:text-[#1A1A1A]'
+                  ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-xs scale-105'
+                  : 'bg-white text-gray-700 hover:bg-emerald-50 hover:text-emerald-900 border border-gray-200'
               }`}
             >
               <Headphones size={16} />
@@ -598,10 +598,10 @@ export const SkillsPracticeView: React.FC<SkillsPracticeViewProps> = ({
                 setActiveWritingTest(null);
                 setActiveSpeakingTest(null);
               }}
-              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all ${
+              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl font-bold text-xs sm:text-sm transition-all shadow-2xs ${
                 activeSkill === 'reading'
-                  ? 'bg-[#1A1A1A] text-white shadow-xs'
-                  : 'bg-[#F7F5F0] text-[#1A1A1A]/70 hover:bg-[#EAE6DF] hover:text-[#1A1A1A]'
+                  ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-xs scale-105'
+                  : 'bg-white text-gray-700 hover:bg-sky-50 hover:text-sky-900 border border-gray-200'
               }`}
             >
               <BookOpen size={16} />
@@ -618,10 +618,10 @@ export const SkillsPracticeView: React.FC<SkillsPracticeViewProps> = ({
                 setActiveWritingTest(null);
                 setActiveSpeakingTest(null);
               }}
-              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all ${
+              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl font-bold text-xs sm:text-sm transition-all shadow-2xs ${
                 activeSkill === 'writing'
-                  ? 'bg-[#1A1A1A] text-white shadow-xs'
-                  : 'bg-[#F7F5F0] text-[#1A1A1A]/70 hover:bg-[#EAE6DF] hover:text-[#1A1A1A]'
+                  ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-xs scale-105'
+                  : 'bg-white text-gray-700 hover:bg-amber-50 hover:text-amber-900 border border-gray-200'
               }`}
             >
               <PenTool size={16} />
@@ -638,10 +638,10 @@ export const SkillsPracticeView: React.FC<SkillsPracticeViewProps> = ({
                 setActiveWritingTest(null);
                 setActiveSpeakingTest(null);
               }}
-              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all ${
+              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl font-bold text-xs sm:text-sm transition-all shadow-2xs ${
                 activeSkill === 'speaking'
-                  ? 'bg-[#1A1A1A] text-white shadow-xs'
-                  : 'bg-[#F7F5F0] text-[#1A1A1A]/70 hover:bg-[#EAE6DF] hover:text-[#1A1A1A]'
+                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-xs scale-105'
+                  : 'bg-white text-gray-700 hover:bg-purple-50 hover:text-purple-900 border border-gray-200'
               }`}
             >
               <Mic size={16} />
@@ -650,16 +650,16 @@ export const SkillsPracticeView: React.FC<SkillsPracticeViewProps> = ({
           </div>
 
           {/* Difficulty Level Filter */}
-          <div className="flex items-center gap-1.5 bg-[#F7F5F0] p-1 rounded-xl border border-[#1A1A1A]/10 text-xs self-end">
+          <div className="flex items-center gap-1.5 bg-gray-100 p-1 rounded-2xl border border-gray-200 text-xs self-end shadow-2xs">
             {(['All', 'Beginner', 'Intermediate', 'Advanced'] as const).map((lvl) => (
               <button
                 key={lvl}
                 type="button"
                 onClick={() => setLevelFilter(lvl)}
-                className={`px-2.5 py-1 rounded-lg font-bold transition-all ${
+                className={`px-3 py-1 rounded-xl font-bold transition-all ${
                   levelFilter === lvl
-                    ? 'bg-white text-[#1A1A1A] shadow-2xs'
-                    : 'text-[#1A1A1A]/50 hover:text-[#1A1A1A]'
+                    ? 'bg-gray-900 text-white shadow-2xs'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-white/50'
                 }`}
               >
                 {lvl}
@@ -1258,22 +1258,41 @@ export const SkillsPracticeView: React.FC<SkillsPracticeViewProps> = ({
           </div>
 
           {/* Interactive Writing Area */}
-          <div className="space-y-2">
-            <div className="flex items-center justify-between text-xs">
-              <label className="font-bold text-[#1A1A1A] uppercase tracking-wider">
-                Your Written Response:
+          <div className="space-y-2.5">
+            <div className="flex flex-wrap items-center justify-between text-xs gap-2">
+              <label className="font-bold text-gray-900 uppercase tracking-wider flex items-center gap-1.5">
+                <PenTool size={14} className="text-amber-600" />
+                <span>Interactive Writing Space:</span>
               </label>
-              <div className="flex items-center gap-2 font-mono text-xs">
+              <div className="flex items-center gap-3 font-mono text-xs">
+                {activeWritingTest.starterTemplate && !writingSubmitted && (
+                  <button
+                    type="button"
+                    onClick={() => setWrittenText(activeWritingTest.starterTemplate || '')}
+                    className="text-indigo-600 hover:text-indigo-800 font-sans font-bold underline"
+                  >
+                    Insert Template
+                  </button>
+                )}
+                {!writingSubmitted && writtenText.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setWrittenText('')}
+                    className="text-rose-600 hover:text-rose-800 font-sans font-bold underline"
+                  >
+                    Clear Space
+                  </button>
+                )}
                 <span
                   className={
                     writtenText.trim().split(/\s+/).filter(Boolean).length < activeWritingTest.minWords
-                      ? 'text-amber-600 font-bold'
-                      : 'text-emerald-700 font-bold'
+                      ? 'text-amber-600 font-bold bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200'
+                      : 'text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200'
                   }
                 >
-                  {writtenText.trim().length === 0 ? 0 : writtenText.trim().split(/\s+/).filter(Boolean).length} Words
+                  {writtenText.trim().length === 0 ? 0 : writtenText.trim().split(/\s+/).filter(Boolean).length} / {activeWritingTest.minWords}–{activeWritingTest.maxWords} Words
                 </span>
-                <span className="text-[#1A1A1A]/40">({writtenText.length} characters)</span>
+                <span className="text-gray-400">({writtenText.length} chars)</span>
               </div>
             </div>
 
@@ -1282,8 +1301,11 @@ export const SkillsPracticeView: React.FC<SkillsPracticeViewProps> = ({
               rows={8}
               value={writtenText}
               onChange={(e) => setWrittenText(e.target.value)}
-              placeholder="Type your response here..."
-              className="w-full rounded-2xl border border-[#1A1A1A]/20 bg-[#FDFCF9] p-4 text-xs sm:text-sm text-[#1A1A1A] font-sans leading-relaxed focus:outline-none focus:ring-2 focus:ring-[#1A1A1A]"
+              placeholder="Type your response here... (Press spacebar or enter naturally to structure your sentences)"
+              disabled={writingSubmitted}
+              className={`w-full rounded-2xl border bg-white p-4 text-xs sm:text-sm text-gray-900 font-sans leading-relaxed transition-all shadow-xs focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 ${
+                writingSubmitted ? 'bg-gray-50/70 border-gray-200 opacity-90' : 'border-amber-200'
+              }`}
             />
           </div>
 
@@ -1293,33 +1315,34 @@ export const SkillsPracticeView: React.FC<SkillsPracticeViewProps> = ({
               id="btn-evaluate-writing"
               type="button"
               onClick={evaluateWritingSubmission}
-              className="w-full py-3 rounded-xl bg-[#1A1A1A] text-white font-bold text-xs sm:text-sm hover:bg-[#333] transition-colors"
+              disabled={writtenText.trim().length < 5}
+              className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 text-white font-bold text-xs sm:text-sm hover:from-amber-600 hover:to-orange-600 transition-all shadow-md hover:scale-[1.01] disabled:opacity-40 disabled:hover:scale-100"
             >
               Submit & Run Automated Rubric Assessment
             </button>
           ) : (
             /* Diagnostic Rubric Scorecard & Model Answer Comparison */
             writingEvaluation && (
-              <div className="space-y-6 pt-4 border-t border-[#1A1A1A]/10 animate-in fade-in">
-                <div className="p-5 rounded-2xl bg-[#1A1A1A] text-white space-y-4">
+              <div className="space-y-6 pt-4 border-t border-gray-100 animate-in fade-in">
+                <div className="p-5 sm:p-6 rounded-3xl bg-gradient-to-br from-gray-900 via-indigo-950 to-purple-950 text-white space-y-4 shadow-md">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <div>
-                      <span className="text-[10px] uppercase tracking-widest text-white/60 font-bold">
+                      <span className="text-[10px] uppercase tracking-widest text-indigo-300 font-bold">
                         Rubric Assessment Results
                       </span>
-                      <h3 className="text-xl font-serif italic font-bold">
+                      <h3 className="text-xl sm:text-2xl font-serif italic font-bold">
                         Total Writing Score: {writingEvaluation.totalScore} / 100
                       </h3>
                     </div>
-                    <div className="px-3 py-1 rounded-full bg-white/20 text-xs font-bold">
-                      {writingEvaluation.totalScore >= 80 ? 'Proficient (Band A)' : 'Developing (Band B)'}
+                    <div className="px-3.5 py-1 rounded-full bg-white/20 text-xs font-bold w-fit">
+                      {writingEvaluation.totalScore >= 80 ? '🌟 Proficient (Band A)' : '📈 Developing (Band B)'}
                     </div>
                   </div>
 
                   {/* Rubric criteria breakdown */}
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 border-t border-white/10">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2 border-t border-white/10">
                     {Object.entries(writingEvaluation.rubricScores).map(([crit, score]) => (
-                      <div key={crit} className="p-2.5 rounded-xl bg-white/10">
+                      <div key={crit} className="p-3 rounded-2xl bg-white/10 shadow-2xs">
                         <span className="text-[10px] text-white/70 block leading-tight">{crit}</span>
                         <span className="text-base font-bold text-white">{score} / 25</span>
                       </div>
@@ -1327,10 +1350,10 @@ export const SkillsPracticeView: React.FC<SkillsPracticeViewProps> = ({
                   </div>
 
                   {/* Feedback points */}
-                  <div className="space-y-1 pt-2">
+                  <div className="space-y-1.5 pt-2">
                     {writingEvaluation.feedback.map((fb, fbIdx) => (
-                      <div key={fbIdx} className="text-xs text-white/90 flex items-start gap-1.5">
-                        <CheckCircle2 size={13} className="text-emerald-400 shrink-0 mt-0.5" />
+                      <div key={fbIdx} className="text-xs text-white/90 flex items-start gap-2">
+                        <CheckCircle2 size={14} className="text-emerald-400 shrink-0 mt-0.5" />
                         <span>{fb}</span>
                       </div>
                     ))}
@@ -1338,32 +1361,43 @@ export const SkillsPracticeView: React.FC<SkillsPracticeViewProps> = ({
                 </div>
 
                 {/* Model Answer Side-by-Side Comparison */}
-                <div className="p-5 rounded-2xl bg-[#F7F5F0] border border-[#1A1A1A]/10 space-y-3">
-                  <div className="flex items-center justify-between">
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-[#1A1A1A]/70 flex items-center gap-1.5">
-                      <Sparkles size={14} className="text-[#C25E3E]" />
+                <div className="p-5 sm:p-6 rounded-3xl bg-gradient-to-b from-amber-50/60 to-white border border-amber-200 space-y-3 shadow-xs">
+                  <div className="flex items-center justify-between flex-wrap gap-2">
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-amber-900 flex items-center gap-1.5">
+                      <Sparkles size={14} className="text-amber-600" />
                       Ms. Maria Official Exemplary Model Answer
                     </h4>
                     <button
                       type="button"
                       onClick={() => speakSentence(activeWritingTest.sampleModelAnswer, 0.9)}
-                      className="flex items-center gap-1 text-xs font-bold text-[#1A1A1A] hover:underline"
+                      className="flex items-center gap-1.5 text-xs font-bold text-amber-800 hover:text-amber-950 bg-amber-100/80 px-3 py-1 rounded-full"
                     >
                       <Volume2 size={14} />
                       <span>Listen to Model</span>
                     </button>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-white border border-[#1A1A1A]/10 font-serif italic text-xs sm:text-sm text-[#1A1A1A] leading-relaxed whitespace-pre-line">
+                  <div className="p-4 rounded-2xl bg-white border border-amber-100 font-serif italic text-xs sm:text-sm text-gray-800 leading-relaxed whitespace-pre-line shadow-2xs">
                     {activeWritingTest.sampleModelAnswer}
                   </div>
                 </div>
 
-                <div className="flex justify-end">
+                <div className="flex items-center justify-between gap-3 flex-wrap">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setWritingSubmitted(false);
+                      setWritingEvaluation(null);
+                    }}
+                    className="px-5 py-2.5 rounded-2xl bg-white border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider hover:bg-amber-50 transition-colors shadow-2xs"
+                  >
+                    ✏️ Revise & Edit My Response
+                  </button>
+
                   <button
                     type="button"
                     onClick={() => setActiveWritingTest(null)}
-                    className="px-5 py-2 rounded-xl bg-[#1A1A1A] text-white text-xs font-bold"
+                    className="px-5 py-2.5 rounded-2xl bg-gradient-to-r from-gray-900 to-indigo-950 text-white text-xs font-bold uppercase tracking-wider hover:from-indigo-900 hover:to-purple-900 transition-colors shadow-2xs"
                   >
                     Back to Writing Catalog
                   </button>

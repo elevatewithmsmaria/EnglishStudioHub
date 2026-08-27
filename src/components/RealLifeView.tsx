@@ -52,20 +52,22 @@ export const RealLifeView: React.FC = () => {
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 space-y-6">
       {/* Header */}
-      <div className="border-b border-slate-200 pb-5">
-        <span className="rounded-md bg-sky-50 border border-sky-200 px-2.5 py-1 text-xs font-bold text-sky-800 uppercase tracking-wider">
-          Practical English
-        </span>
-        <h1 className="mt-1 text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+      <div className="border-b border-gray-200/80 pb-5">
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="rounded-full bg-gradient-to-r from-sky-500 to-blue-600 text-white px-3 py-1 text-xs font-bold uppercase tracking-wider shadow-2xs">
+            Practical English Scenarios
+          </span>
+        </div>
+        <h1 className="mt-2 text-2xl sm:text-4xl font-serif italic font-black text-gray-900 tracking-tight">
           Real-Life Situations & Professional Communication
         </h1>
-        <p className="text-sm text-slate-600 font-medium">
-          Apply grammar where it truly matters: meetings, phone calls, dining, medical visits, and job interviews.
+        <p className="text-sm text-gray-600 font-sans mt-1">
+          Prepared and created by <a href="https://www.facebook.com/elevatewithmsmaria" target="_blank" rel="noopener noreferrer" className="font-serif italic font-bold text-sky-700 underline hover:text-sky-900">Ms. Maria</a> for real-world fluency.
         </p>
       </div>
 
       {/* Scenario Tabs */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
         {REAL_LIFE_SCENARIOS.map((s) => {
           const isSelected = s.id === selectedScenarioId;
           return (
@@ -73,13 +75,13 @@ export const RealLifeView: React.FC = () => {
               key={s.id}
               id={`tab-scenario-${s.id}`}
               onClick={() => setSelectedScenarioId(s.id)}
-              className={`flex flex-col items-center justify-center p-3 rounded-2xl border text-center transition-all ${
+              className={`flex flex-col items-center justify-center p-3.5 rounded-3xl border text-center transition-all shadow-2xs ${
                 isSelected
-                  ? 'border-indigo-600 bg-indigo-50/90 text-indigo-950 font-bold shadow-xs ring-2 ring-indigo-500/20'
-                  : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50'
+                  ? 'border-sky-500 bg-gradient-to-tr from-sky-500 to-blue-600 text-white font-bold shadow-md scale-105'
+                  : 'border-gray-200 bg-white text-gray-700 hover:border-sky-300 hover:bg-sky-50/50'
               }`}
             >
-              <div className={`p-2 rounded-xl mb-1.5 ${isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600'}`}>
+              <div className={`p-2.5 rounded-2xl mb-1.5 ${isSelected ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-600'}`}>
                 {getScenarioIcon(s.id)}
               </div>
               <span className="text-xs font-bold leading-tight">{s.title}</span>
@@ -92,22 +94,22 @@ export const RealLifeView: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left Column: Interactive Dialogue Reader (2 spans) */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm space-y-4">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+          <div className="rounded-3xl border border-sky-200/80 bg-white p-6 sm:p-7 shadow-xs space-y-4">
+            <div className="flex items-center justify-between border-b border-gray-100 pb-3">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-indigo-600">
+                <span className="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-2.5 py-0.5 rounded-full border border-sky-200">
                   {scenario.category}
                 </span>
-                <h3 className="text-xl font-bold text-slate-900">
+                <h3 className="text-xl sm:text-2xl font-serif italic font-bold text-gray-900 mt-1">
                   {scenario.title}
                 </h3>
               </div>
-              <span className="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600">
+              <span className="rounded-full bg-sky-50 border border-sky-200 px-3 py-1 text-xs font-bold text-sky-800">
                 {scenario.dialogue.length} Exchanges
               </span>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-600 font-medium">
+            <p className="text-xs sm:text-sm text-gray-600 font-sans">
               {scenario.description}
             </p>
 
@@ -119,26 +121,26 @@ export const RealLifeView: React.FC = () => {
                 return (
                   <div
                     key={idx}
-                    className={`rounded-2xl p-4 transition-colors ${
+                    className={`rounded-2xl p-4 transition-colors shadow-2xs ${
                       isSpeakerA
-                        ? 'border border-indigo-100 bg-indigo-50/50 ml-0 mr-4 sm:mr-12'
-                        : 'border border-slate-200 bg-slate-50 mr-0 ml-4 sm:ml-12'
+                        ? 'border border-sky-200 bg-gradient-to-r from-sky-50/80 to-blue-50/50 ml-0 mr-4 sm:mr-12'
+                        : 'border border-purple-200 bg-gradient-to-r from-purple-50/80 to-pink-50/50 mr-0 ml-4 sm:ml-12'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-xs font-bold text-indigo-900">
+                      <span className={`text-xs font-bold ${isSpeakerA ? 'text-sky-900' : 'text-purple-900'}`}>
                         {line.speaker}
                       </span>
                       <AudioButton text={line.text} size="sm" />
                     </div>
 
-                    <p className="text-sm font-semibold text-slate-900 leading-relaxed">
+                    <p className="text-sm font-semibold text-gray-900 leading-relaxed font-sans">
                       "{line.text}"
                     </p>
 
                     {line.grammarHighlight && (
-                      <div className="mt-2 rounded-lg bg-white/90 border border-slate-200/80 p-2 text-xs text-slate-600 font-medium flex items-center gap-1.5">
-                        <span className="text-indigo-600 font-bold">💡 Grammar Note:</span>
+                      <div className="mt-2 rounded-xl bg-white/95 border border-gray-200/80 p-2.5 text-xs text-gray-700 font-sans flex items-center gap-1.5 shadow-2xs">
+                        <span className="text-sky-600 font-bold">💡 Grammar Note:</span>
                         <span>{line.grammarHighlight}</span>
                       </div>
                     )}
@@ -149,8 +151,8 @@ export const RealLifeView: React.FC = () => {
           </div>
 
           {/* Interactive Situational Practice Exercises */}
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm space-y-5">
-            <div className="flex items-center gap-2 font-bold text-slate-900 text-base">
+          <div className="rounded-3xl border border-indigo-200/80 bg-white p-6 sm:p-7 shadow-xs space-y-5">
+            <div className="flex items-center gap-2 font-bold text-gray-900 text-base">
               <Sparkles size={18} className="text-indigo-600" />
               <span>Situational Decision Practice</span>
             </div>
@@ -161,8 +163,8 @@ export const RealLifeView: React.FC = () => {
                 const currentAnswer = answers[q.id];
 
                 return (
-                  <div key={q.id} className="rounded-xl border border-slate-100 bg-slate-50 p-4 space-y-3">
-                    <p className="text-xs sm:text-sm font-bold text-slate-900">
+                  <div key={q.id} className="rounded-2xl border border-indigo-100 bg-indigo-50/30 p-4 sm:p-5 space-y-3 shadow-2xs">
+                    <p className="text-xs sm:text-sm font-bold text-gray-900">
                       {qIdx + 1}. {q.prompt}
                     </p>
 
@@ -176,19 +178,21 @@ export const RealLifeView: React.FC = () => {
                               type="button"
                               disabled={isChecked}
                               onClick={() => setAnswers((prev) => ({ ...prev, [q.id]: optIdx }))}
-                              className={`w-full text-left rounded-xl border p-3 text-xs sm:text-sm font-medium transition-all flex items-center justify-between ${
+                              className={`w-full text-left rounded-2xl border p-3 text-xs sm:text-sm font-medium transition-all flex items-center justify-between shadow-2xs ${
                                 isSelected
-                                  ? 'border-indigo-600 bg-indigo-50 text-indigo-950 ring-2 ring-indigo-500/20'
-                                  : 'border-slate-200 bg-white text-slate-800 hover:border-slate-300'
+                                  ? 'border-indigo-600 bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-xs'
+                                  : 'border-gray-200 bg-white text-gray-800 hover:border-indigo-300'
                               }`}
                             >
                               <div className="flex items-center gap-2.5">
-                                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[11px] font-bold">
+                                <span className={`flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-bold ${
+                                  isSelected ? 'bg-white text-indigo-700' : 'bg-gray-100 text-gray-700'
+                                }`}>
                                   {String.fromCharCode(65 + optIdx)}
                                 </span>
                                 <span>{opt}</span>
                               </div>
-                              {isSelected && <Check size={15} className="text-indigo-600" />}
+                              {isSelected && <Check size={16} className="text-white" />}
                             </button>
                           );
                         })}
@@ -201,7 +205,7 @@ export const RealLifeView: React.FC = () => {
                           type="button"
                           disabled={currentAnswer === undefined}
                           onClick={() => setChecked((prev) => ({ ...prev, [q.id]: true }))}
-                          className="rounded-xl bg-indigo-600 px-4 py-1.5 text-xs font-bold text-white hover:bg-indigo-700 disabled:opacity-40"
+                          className="rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 px-5 py-2 text-xs font-bold uppercase tracking-wider text-white hover:from-indigo-700 hover:to-purple-700 disabled:opacity-40 shadow-2xs"
                         >
                           Check Answer
                         </button>
@@ -228,8 +232,8 @@ export const RealLifeView: React.FC = () => {
         {/* Right Column: Key Phrases & Adult Tips (1 span) */}
         <div className="space-y-6">
           {/* Key Phrases */}
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm space-y-4">
-            <h4 className="font-bold text-slate-900 text-sm sm:text-base flex items-center gap-2">
+          <div className="rounded-3xl border border-emerald-200/80 bg-white p-5 sm:p-6 shadow-xs space-y-4">
+            <h4 className="font-bold text-gray-900 text-sm sm:text-base flex items-center gap-2">
               <CheckCircle2 size={18} className="text-emerald-600" />
               <span>High-Frequency Key Phrases</span>
             </h4>
@@ -238,18 +242,18 @@ export const RealLifeView: React.FC = () => {
               {scenario.keyPhrases.map((phrase, idx) => (
                 <div
                   key={idx}
-                  className="rounded-xl border border-slate-200 bg-slate-50 p-3 hover:border-slate-300 transition-colors"
+                  className="rounded-2xl border border-emerald-100 bg-emerald-50/40 p-3.5 hover:border-emerald-300 transition-colors shadow-2xs"
                 >
                   <div className="flex items-center justify-between mb-1">
-                    <span className="font-bold text-xs sm:text-sm text-slate-900">
+                    <span className="font-bold text-xs sm:text-sm text-gray-900 font-sans">
                       "{phrase.phrase}"
                     </span>
                     <AudioButton text={phrase.phrase} size="sm" />
                   </div>
-                  <span className="text-xs font-bold text-indigo-700 block mb-0.5">
+                  <span className="text-xs font-bold text-emerald-800 block mb-0.5">
                     Purpose: {phrase.explanation}
                   </span>
-                  <p className="text-[11px] text-slate-500 font-medium">
+                  <p className="text-[11px] text-gray-600 font-sans">
                     Rule: {phrase.grammarRule}
                   </p>
                 </div>
@@ -258,13 +262,13 @@ export const RealLifeView: React.FC = () => {
           </div>
 
           {/* Cultural & Workplace Communication Tip */}
-          <div className="rounded-2xl border border-amber-200 bg-amber-50/70 p-5 shadow-sm space-y-2 text-xs text-amber-950">
+          <div className="rounded-3xl border border-amber-200 bg-gradient-to-br from-amber-50 to-orange-50/60 p-5 shadow-xs space-y-2 text-xs text-amber-950">
             <div className="flex items-center gap-1.5 font-bold text-amber-900 text-sm">
               <Lightbulb size={16} className="text-amber-600" />
-              <span>Coach Professional Tip</span>
+              <span>Ms. Maria's Professional Tip</span>
             </div>
-            <p className="leading-relaxed font-medium">
-              In international business and daily adult life, phrasing requests with <strong className="text-slate-900">"Could I please..."</strong> or <strong className="text-slate-900">"Would you mind..."</strong> establishes instant respect and professionalism.
+            <p className="leading-relaxed font-sans text-amber-900">
+              In international business and daily adult life, phrasing requests with <strong className="text-gray-900">"Could I please..."</strong> or <strong className="text-gray-900">"Would you mind..."</strong> establishes instant respect and professionalism.
             </p>
           </div>
         </div>

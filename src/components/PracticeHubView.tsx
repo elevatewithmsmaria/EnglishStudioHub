@@ -422,58 +422,58 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 space-y-6">
       {/* Header with Creator Attribution */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#1A1A1A]/10 pb-5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-200/80 pb-5">
         <div>
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-[#F7F5F0] border border-[#1A1A1A]/10 rounded-full text-[#1A1A1A]/70">
+            <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full shadow-2xs">
               Daily Practice Hub & Gym
             </span>
-            <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 bg-[#4A5D4E]/10 border border-[#4A5D4E]/20 rounded-full text-[#4A5D4E]">
+            <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 bg-emerald-100 border border-emerald-300 rounded-full text-emerald-800 shadow-2xs">
               <Calendar size={11} /> {formattedToday}
             </span>
           </div>
-          <h1 className="mt-2 text-2xl sm:text-3xl font-serif italic text-[#1A1A1A] tracking-tight">
+          <h1 className="mt-2 text-2xl sm:text-4xl font-serif italic font-black text-gray-900 tracking-tight">
             Grammar Practice & Daily Muscle Memory
           </h1>
-          <p className="text-sm text-[#1A1A1A]/70 font-sans mt-1">
-            Prepared and created by <a href="https://www.facebook.com/elevatewithmsmaria" target="_blank" rel="noopener noreferrer" className="font-serif italic font-bold text-[#1A1A1A] underline decoration-[#1A1A1A]/40 hover:decoration-[#1A1A1A]">Ms. Maria</a> for students worldwide.
+          <p className="text-sm text-gray-600 font-sans mt-1">
+            Prepared and created by <a href="https://www.facebook.com/elevatewithmsmaria" target="_blank" rel="noopener noreferrer" className="font-serif italic font-bold text-amber-700 underline hover:text-amber-800">Ms. Maria</a> for students worldwide.
           </p>
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 rounded-xl bg-[#F7F5F0] border border-[#1A1A1A]/10 px-3.5 py-2">
-            <Flame size={16} className="text-[#C25E3E] fill-[#C25E3E]" />
+          <div className="flex items-center gap-2 rounded-2xl bg-gradient-to-r from-orange-100 to-amber-100 border border-orange-200 px-4 py-2.5 shadow-2xs">
+            <Flame size={18} className="text-orange-500 fill-orange-500 animate-pulse" />
             <div className="text-left">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#1A1A1A]/50 block">Streak</span>
-              <span className="text-xs font-bold text-[#1A1A1A]">{progress.streakCount} Days Active</span>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-orange-900 block">Streak</span>
+              <span className="text-xs font-black text-orange-950">{progress.streakCount} Days Active</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Mode Switcher Tabs */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#1A1A1A]/10 pb-3">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-gray-200/80 pb-3">
         <div className="flex flex-wrap gap-2">
           <button
             id="tab-mode-workout"
             onClick={() => setActiveMode('workout')}
-            className={`flex items-center gap-2 rounded-lg px-4 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all ${
+            className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-2xs ${
               activeMode === 'workout'
-                ? 'bg-[#1A1A1A] text-white shadow-2xs'
-                : 'bg-[#F7F5F0] text-[#1A1A1A]/70 hover:bg-white hover:text-[#1A1A1A]'
+                ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-xs scale-105'
+                : 'bg-white text-gray-700 hover:bg-amber-50 hover:text-amber-900 border border-gray-200'
             }`}
           >
-            <Sparkles size={14} />
+            <Sparkles size={14} className={activeMode === 'workout' ? 'animate-spin' : ''} />
             <span>Daily Fresh Workout</span>
           </button>
 
           <button
             id="tab-mode-gym"
             onClick={() => setActiveMode('sentence_gym')}
-            className={`flex items-center gap-2 rounded-lg px-4 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all ${
+            className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-2xs ${
               activeMode === 'sentence_gym'
-                ? 'bg-[#1A1A1A] text-white shadow-2xs'
-                : 'bg-[#F7F5F0] text-[#1A1A1A]/70 hover:bg-white hover:text-[#1A1A1A]'
+                ? 'bg-gradient-to-r from-rose-600 to-pink-600 text-white shadow-xs scale-105'
+                : 'bg-white text-gray-700 hover:bg-rose-50 hover:text-rose-900 border border-gray-200'
             }`}
           >
             <AlertTriangle size={14} />
@@ -483,10 +483,10 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
           <button
             id="tab-mode-builder"
             onClick={() => setActiveMode('word_builder')}
-            className={`flex items-center gap-2 rounded-lg px-4 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all ${
+            className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-2xs ${
               activeMode === 'word_builder'
-                ? 'bg-[#1A1A1A] text-white shadow-2xs'
-                : 'bg-[#F7F5F0] text-[#1A1A1A]/70 hover:bg-white hover:text-[#1A1A1A]'
+                ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-xs scale-105'
+                : 'bg-white text-gray-700 hover:bg-indigo-50 hover:text-indigo-900 border border-gray-200'
             }`}
           >
             <Layers size={14} />
@@ -497,15 +497,15 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
         {/* Difficulty Selector and Refresh Actions in Workout Mode */}
         {activeMode === 'workout' && (
           <div className="flex items-center gap-2 flex-wrap">
-            <div className="flex items-center gap-1 rounded-xl border border-[#1A1A1A]/10 bg-[#F7F5F0] p-1">
+            <div className="flex items-center gap-1 rounded-2xl border border-gray-200 bg-white p-1 shadow-2xs">
               <button
                 type="button"
                 id="diff-filter-all"
                 onClick={() => handleDifficultyChange('all')}
-                className={`rounded-lg px-2.5 py-1 text-[11px] font-bold uppercase transition-colors ${
+                className={`rounded-xl px-3 py-1 text-[11px] font-bold uppercase transition-colors ${
                   selectedDifficulty === 'all'
-                    ? 'bg-[#1A1A1A] text-white'
-                    : 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]'
+                    ? 'bg-gray-900 text-white'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                 }`}
               >
                 All
@@ -514,10 +514,10 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
                 type="button"
                 id="diff-filter-easy"
                 onClick={() => handleDifficultyChange('easy')}
-                className={`rounded-lg px-2.5 py-1 text-[11px] font-bold uppercase transition-colors ${
+                className={`rounded-xl px-3 py-1 text-[11px] font-bold uppercase transition-colors ${
                   selectedDifficulty === 'easy'
-                    ? 'bg-[#4A5D4E] text-white'
-                    : 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]'
+                    ? 'bg-emerald-600 text-white shadow-2xs'
+                    : 'text-gray-600 hover:text-emerald-700 hover:bg-emerald-50'
                 }`}
               >
                 Easy
@@ -526,10 +526,10 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
                 type="button"
                 id="diff-filter-medium"
                 onClick={() => handleDifficultyChange('medium')}
-                className={`rounded-lg px-2.5 py-1 text-[11px] font-bold uppercase transition-colors ${
+                className={`rounded-xl px-3 py-1 text-[11px] font-bold uppercase transition-colors ${
                   selectedDifficulty === 'medium'
-                    ? 'bg-[#C25E3E] text-white'
-                    : 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]'
+                    ? 'bg-amber-600 text-white shadow-2xs'
+                    : 'text-gray-600 hover:text-amber-700 hover:bg-amber-50'
                 }`}
               >
                 Medium
@@ -538,10 +538,10 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
                 type="button"
                 id="diff-filter-hard"
                 onClick={() => handleDifficultyChange('hard')}
-                className={`rounded-lg px-2.5 py-1 text-[11px] font-bold uppercase transition-colors ${
+                className={`rounded-xl px-3 py-1 text-[11px] font-bold uppercase transition-colors ${
                   selectedDifficulty === 'hard'
-                    ? 'bg-[#7A3E65] text-white'
-                    : 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]'
+                    ? 'bg-rose-600 text-white shadow-2xs'
+                    : 'text-gray-600 hover:text-rose-700 hover:bg-rose-50'
                 }`}
               >
                 Hard
@@ -553,9 +553,9 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
               type="button"
               onClick={handleRefreshNewQuestions}
               title="Generate a fresh, non-repetitive practice set for today"
-              className="inline-flex items-center gap-1.5 rounded-xl border border-[#1A1A1A]/15 bg-white px-3 py-1.5 text-xs font-bold text-[#1A1A1A] hover:bg-[#F7F5F0] transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-2xl border border-teal-200 bg-teal-50/80 px-3.5 py-1.5 text-xs font-bold text-teal-800 hover:bg-teal-100 transition-colors shadow-2xs"
             >
-              <RefreshCw size={13} className="text-[#4A5D4E]" />
+              <RefreshCw size={13} className="text-teal-700" />
               <span>Refresh Questions</span>
             </button>
           </div>
@@ -566,22 +566,22 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
       {activeMode === 'workout' && (
         <div className="space-y-6">
           {!isWorkoutFinished ? (
-            <div className="rounded-2xl border border-[#1A1A1A]/10 bg-white p-6 sm:p-8 space-y-5">
+            <div className="rounded-3xl border border-amber-200/80 bg-white p-6 sm:p-8 space-y-6 shadow-sm">
               {/* Progress Bar & Badges */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#1A1A1A]/10 pb-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-100 pb-4">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1A1A1A] text-white font-serif font-bold text-xs">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-500 text-white font-serif font-bold text-xs shadow-2xs">
                     {workoutIndex + 1}
                   </span>
                   <div>
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A]">
+                      <span className="text-xs font-bold uppercase tracking-wider text-gray-900">
                         {currentQ.prompt || `Item ${workoutIndex + 1} of ${dailyQuestions.length}`}
                       </span>
                       {currentQ.difficulty && getDifficultyBadge(currentQ.difficulty)}
                     </div>
                     {currentQ.skillDomain && (
-                      <span className="text-[11px] text-[#1A1A1A]/60 font-serif italic">
+                      <span className="text-[11px] text-indigo-700 font-serif italic">
                         Topic: {currentQ.skillDomain}
                       </span>
                     )}
@@ -589,12 +589,12 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#1A1A1A]/50">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-gray-500">
                     {workoutIndex + 1} / {dailyQuestions.length}
                   </span>
-                  <div className="h-1.5 w-24 sm:w-36 rounded-full bg-[#E5E0D8] overflow-hidden">
+                  <div className="h-2 w-28 sm:w-40 rounded-full bg-amber-100 overflow-hidden">
                     <div
-                      className="h-full bg-[#1A1A1A] rounded-full transition-all duration-300"
+                      className="h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-full transition-all duration-300"
                       style={{ width: `${Math.round(((workoutIndex + 1) / (dailyQuestions.length || 1)) * 100)}%` }}
                     />
                   </div>
@@ -603,16 +603,16 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
 
               {/* Scenario Context if Real-Life type */}
               {currentQ.type === 'real_life_situation' && (
-                <div className="rounded-xl border border-[#1A1A1A]/10 bg-[#F7F5F0] p-4 text-xs sm:text-sm text-[#1A1A1A] space-y-1">
-                  <p className="font-serif italic font-bold text-sm">Real Scenario: {currentQ.scenario}</p>
-                  <p className="text-[#1A1A1A]/80 font-sans">Objective: {currentQ.promptQuestion}</p>
+                <div className="rounded-2xl border border-teal-200 bg-teal-50/70 p-4 text-xs sm:text-sm text-gray-900 space-y-1">
+                  <p className="font-serif italic font-bold text-sm text-teal-950">Real Scenario: {currentQ.scenario}</p>
+                  <p className="text-teal-900 font-sans">Objective: {currentQ.promptQuestion}</p>
                 </div>
               )}
 
               {/* Sentence Blank if Fill in blank */}
               {currentQ.type === 'fill_blank' && (
-                <div className="rounded-xl bg-[#F7F5F0] p-5 border border-[#1A1A1A]/10">
-                  <p className="text-lg sm:text-xl font-serif italic text-[#1A1A1A]">
+                <div className="rounded-2xl bg-gradient-to-r from-amber-50/80 to-yellow-50/60 p-5 border border-amber-200/80">
+                  <p className="text-lg sm:text-xl font-serif italic text-gray-900">
                     {currentQ.sentenceWithBlank}
                   </p>
                 </div>
@@ -620,18 +620,18 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
 
               {/* Sentence Correction Incorrect if Sentence Correction */}
               {currentQ.type === 'sentence_correction' && (
-                <div className="rounded-xl border border-[#C25E3E]/20 bg-[#C25E3E]/5 p-4 text-xs sm:text-sm">
-                  <span className="text-[#C25E3E] font-bold text-xs uppercase tracking-wider block mb-1">Spot and fix the common slip:</span>
-                  <p className="text-base sm:text-lg font-serif italic font-bold text-[#1A1A1A]">{currentQ.incorrectSentence}</p>
+                <div className="rounded-2xl border border-rose-200 bg-rose-50/80 p-4 text-xs sm:text-sm">
+                  <span className="text-rose-600 font-bold text-xs uppercase tracking-wider block mb-1">Spot and fix the common slip:</span>
+                  <p className="text-base sm:text-lg font-serif italic font-bold text-rose-950">{currentQ.incorrectSentence}</p>
                 </div>
               )}
 
               {/* Word order builder if word order */}
               {currentQ.type === 'word_order' && (
                 <div className="space-y-3">
-                  <div className="min-h-[56px] rounded-xl border-2 border-dashed border-[#1A1A1A]/20 bg-[#FDFCF9] p-3 flex flex-wrap gap-2 items-center">
+                  <div className="min-h-[60px] rounded-2xl border-2 border-dashed border-indigo-200 bg-indigo-50/40 p-3 flex flex-wrap gap-2 items-center">
                     {selectedWords.length === 0 ? (
-                      <span className="text-xs text-[#1A1A1A]/40 font-serif italic">Tap words below in order to build natural sentence structure...</span>
+                      <span className="text-xs text-indigo-400 font-serif italic">Tap words below in order to build natural sentence structure...</span>
                     ) : (
                       selectedWords.map((w, idx) => (
                         <span
@@ -643,7 +643,7 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
                               setSelectedWords(next);
                             }
                           }}
-                          className="rounded-lg bg-[#1A1A1A] text-white px-3 py-1.5 text-xs font-bold cursor-pointer hover:bg-[#C25E3E] transition-colors"
+                          className="rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-3.5 py-1.5 text-xs font-bold cursor-pointer hover:from-rose-600 hover:to-pink-600 transition-colors shadow-2xs"
                         >
                           {w}
                         </span>
@@ -668,10 +668,10 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
                                 [workoutIndex]: nextWords.join(' ')
                               }));
                             }}
-                            className={`rounded-lg border px-3 py-2 text-xs font-bold transition-colors ${
+                            className={`rounded-xl border px-3.5 py-2 text-xs font-bold transition-all shadow-2xs ${
                               isUsed
-                                ? 'border-[#1A1A1A]/10 bg-[#F7F5F0] text-[#1A1A1A]/20'
-                                : 'border-[#1A1A1A]/20 bg-white text-[#1A1A1A] hover:border-[#1A1A1A] hover:bg-[#F7F5F0]'
+                                ? 'border-gray-100 bg-gray-100 text-gray-400 opacity-40'
+                                : 'border-gray-200 bg-white text-gray-800 hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-900'
                             }`}
                           >
                             {word}
@@ -695,21 +695,21 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
                         id={`workout-opt-${optIdx}`}
                         disabled={isCurrentChecked}
                         onClick={() => setAnswers((prev) => ({ ...prev, [workoutIndex]: optIdx }))}
-                        className={`w-full text-left rounded-xl border p-4 text-sm font-medium transition-all flex items-center justify-between ${
+                        className={`w-full text-left rounded-2xl border p-4 text-sm font-medium transition-all flex items-center justify-between shadow-2xs ${
                           isSelected
-                            ? 'border-[#1A1A1A] bg-[#1A1A1A] text-white'
-                            : 'border-[#1A1A1A]/15 bg-white text-[#1A1A1A] hover:border-[#1A1A1A]/40 hover:bg-[#F7F5F0]'
+                            ? 'border-indigo-600 bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-xs'
+                            : 'border-gray-200 bg-white text-gray-800 hover:border-indigo-300 hover:bg-indigo-50/50'
                         }`}
                       >
                         <div className="flex items-center gap-3">
-                          <span className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${
-                            isSelected ? 'bg-white text-[#1A1A1A]' : 'bg-[#F7F5F0] text-[#1A1A1A]/70'
+                          <span className={`flex h-7 w-7 items-center justify-center rounded-xl text-xs font-bold ${
+                            isSelected ? 'bg-white text-indigo-700' : 'bg-gray-100 text-gray-700'
                           }`}>
                             {String.fromCharCode(65 + optIdx)}
                           </span>
                           <span>{opt}</span>
                         </div>
-                        {isSelected && <Check size={16} className="text-white" />}
+                        {isSelected && <Check size={18} className="text-white" />}
                       </button>
                     );
                   })}
@@ -743,9 +743,9 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
               )}
 
               {/* Action Bar */}
-              <div className="flex items-center justify-between border-t border-[#1A1A1A]/10 pt-4">
-                <span className="text-xs text-[#1A1A1A]/50 font-sans">
-                  Prepared by Ms. Maria • Daily Fresh Practice
+              <div className="flex items-center justify-between border-t border-gray-100 pt-4">
+                <span className="text-xs text-gray-500 font-sans">
+                  Prepared and created by <strong className="text-amber-700">Ms. Maria</strong> • Daily Fresh Practice
                 </span>
 
                 {!isCurrentChecked ? (
@@ -754,7 +754,7 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
                     type="button"
                     disabled={currentAnswer === undefined && (currentQ.type !== 'word_order' || selectedWords.length === 0)}
                     onClick={() => setChecked((prev) => ({ ...prev, [workoutIndex]: true }))}
-                    className="rounded-lg bg-[#1A1A1A] px-6 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white hover:bg-[#333] disabled:opacity-30 transition-colors"
+                    className="rounded-2xl bg-gradient-to-r from-gray-900 to-indigo-950 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white hover:from-indigo-900 hover:to-purple-900 disabled:opacity-30 transition-all shadow-xs"
                   >
                     Check Answer
                   </button>
@@ -763,38 +763,38 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
                     id="btn-workout-next"
                     type="button"
                     onClick={handleNextWorkoutQuestion}
-                    className="inline-flex items-center gap-2 rounded-lg bg-[#1A1A1A] px-6 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white hover:bg-[#333] transition-colors"
+                    className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white hover:from-emerald-700 hover:to-teal-700 transition-all shadow-md hover:scale-105"
                   >
                     <span>{workoutIndex === dailyQuestions.length - 1 ? 'Finish Workout' : 'Next Question'}</span>
-                    <ArrowRight size={14} />
+                    <ArrowRight size={15} />
                   </button>
                 )}
               </div>
             </div>
           ) : (
-            <div className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-8 sm:p-10 text-center space-y-6">
-              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#1A1A1A] text-white">
-                <Award size={36} />
+            <div className="rounded-3xl border border-amber-200 bg-gradient-to-b from-amber-50/60 to-white p-8 sm:p-10 text-center space-y-6 shadow-sm">
+              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-tr from-amber-500 to-orange-500 text-white shadow-md animate-bounce">
+                <Award size={40} />
               </div>
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-[#F7F5F0] border border-[#1A1A1A]/10 rounded-full text-[#1A1A1A]/70 inline-block mb-3">
+                <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-amber-100 border border-amber-300 rounded-full text-amber-900 inline-block mb-3 shadow-2xs">
                   Daily Grammar Workout Complete
                 </span>
-                <h2 className="text-2xl sm:text-4xl font-serif italic text-[#1A1A1A]">
+                <h2 className="text-2xl sm:text-4xl font-serif italic font-black text-gray-900">
                   Outstanding Practice Session!
                 </h2>
-                <p className="mt-2 text-sm text-[#1A1A1A]/70 font-sans max-w-md mx-auto">
-                  You completed all {dailyQuestions.length} questions in today's workout curated by Ms. Maria.
+                <p className="mt-2 text-sm text-gray-600 font-sans max-w-md mx-auto">
+                  You completed all {dailyQuestions.length} questions in today's workout prepared and created by Ms. Maria.
                 </p>
               </div>
 
-              <div className="rounded-2xl bg-[#F7F5F0] border border-[#1A1A1A]/10 p-6 max-w-sm mx-auto">
-                <span className="text-[10px] font-bold text-[#1A1A1A]/50 uppercase tracking-widest block mb-1">Session Result</span>
-                <div className="text-4xl font-serif italic font-bold text-[#1A1A1A]">
+              <div className="rounded-3xl bg-white border border-amber-200 p-6 max-w-sm mx-auto shadow-xs">
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-1">Session Result</span>
+                <div className="text-4xl font-serif italic font-black bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
                   {calculateWorkoutScore()} / {dailyQuestions.length}
                 </div>
-                <p className="text-xs font-semibold text-[#1A1A1A]/60 mt-1">
-                  +25 Practice Points earned
+                <p className="text-xs font-bold text-emerald-700 mt-1">
+                  ✨ +25 Practice Points earned!
                 </p>
               </div>
 
@@ -802,7 +802,7 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
                 <button
                   id="btn-workout-reset"
                   onClick={resetWorkout}
-                  className="rounded-lg border border-[#1A1A1A]/15 bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#1A1A1A] hover:bg-[#F7F5F0] transition-colors"
+                  className="rounded-2xl border border-gray-200 bg-white px-5 py-3 text-xs font-bold uppercase tracking-wider text-gray-700 hover:bg-gray-50 transition-colors shadow-2xs"
                 >
                   <RotateCcw size={14} className="inline mr-1.5" />
                   Review Current Set
@@ -811,7 +811,7 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
                 <button
                   id="btn-workout-roll-new"
                   onClick={handleRefreshNewQuestions}
-                  className="rounded-lg bg-[#1A1A1A] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#333] transition-colors inline-flex items-center gap-1.5"
+                  className="rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white hover:from-amber-600 hover:to-orange-600 transition-all inline-flex items-center gap-1.5 shadow-md"
                 >
                   <RefreshCw size={14} />
                   <span>Start Brand New Set</span>
@@ -825,40 +825,40 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
       {/* ================= MODE 2: SENTENCE CORRECTION GYM (20 DRILLS) ================= */}
       {activeMode === 'sentence_gym' && (
         <div className="space-y-4">
-          <div className="rounded-xl bg-[#F7F5F0] border border-[#1A1A1A]/10 p-4 text-xs sm:text-sm text-[#1A1A1A]">
-            <p className="font-serif italic font-bold text-base text-[#1A1A1A]">
+          <div className="rounded-2xl bg-gradient-to-r from-rose-50 to-pink-50 border border-rose-200 p-4 text-xs sm:text-sm text-gray-900 shadow-2xs">
+            <p className="font-serif italic font-bold text-base text-rose-950">
               🎯 Sentence Correction Gym: 20 Essential Grammar Drills
             </p>
-            <p className="text-xs text-[#1A1A1A]/70 font-sans mt-0.5">
-              Prepared and curated by <a href="https://www.facebook.com/elevatewithmsmaria" target="_blank" rel="noopener noreferrer" className="underline font-bold text-[#1A1A1A]">Ms. Maria</a> to eliminate native language translation slips for students.
+            <p className="text-xs text-rose-900/80 font-sans mt-0.5">
+              Prepared and created by <a href="https://www.facebook.com/elevatewithmsmaria" target="_blank" rel="noopener noreferrer" className="underline font-bold text-rose-900">Ms. Maria</a> to eliminate native language translation slips for students.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {SENTENCE_GYM_EXERCISES.map((item, idx) => (
-              <div key={item.id} className="rounded-2xl border border-[#1A1A1A]/10 bg-white p-5 space-y-3.5 flex flex-col justify-between">
+              <div key={item.id} className="rounded-3xl border border-rose-100 bg-white p-5 space-y-3.5 flex flex-col justify-between shadow-2xs hover:shadow-sm transition-shadow">
                 <div>
-                  <div className="flex items-center justify-between border-b border-[#1A1A1A]/10 pb-2 mb-2.5">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#1A1A1A]/50">
+                  <div className="flex items-center justify-between border-b border-gray-100 pb-2 mb-2.5">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-rose-700 bg-rose-50 px-2.5 py-0.5 rounded-full border border-rose-200">
                       Drill {idx + 1} of 20 • {item.category}
                     </span>
                     <AudioButton text={item.corrected} size="sm" label="Listen" />
                   </div>
 
                   <div className="space-y-2 text-xs sm:text-sm">
-                    <div className="rounded-xl border border-[#C25E3E]/20 bg-[#C25E3E]/5 p-3">
-                      <span className="text-[#C25E3E] font-bold text-[11px] uppercase tracking-wider block mb-0.5">Common Slip:</span>
-                      <span className="line-through decoration-[#C25E3E] decoration-2 text-[#1A1A1A]/70 font-sans">{item.slip}</span>
+                    <div className="rounded-2xl border border-rose-200 bg-rose-50/80 p-3">
+                      <span className="text-rose-600 font-bold text-[11px] uppercase tracking-wider block mb-0.5">Common Slip:</span>
+                      <span className="line-through text-rose-900 font-sans font-medium">{item.slip}</span>
                     </div>
-                    <div className="rounded-xl border border-[#4A5D4E]/20 bg-[#4A5D4E]/5 p-3">
-                      <span className="text-[#4A5D4E] font-bold text-[11px] uppercase tracking-wider block mb-0.5">Natural English:</span>
-                      <span className="text-[#1A1A1A] font-bold font-sans">{item.corrected}</span>
+                    <div className="rounded-2xl border border-emerald-200 bg-emerald-50/80 p-3">
+                      <span className="text-emerald-700 font-bold text-[11px] uppercase tracking-wider block mb-0.5">Natural English:</span>
+                      <span className="text-emerald-950 font-bold font-sans">{item.corrected}</span>
                     </div>
                   </div>
                 </div>
 
-                <p className="text-xs text-[#1A1A1A]/80 bg-[#F7F5F0] p-3 rounded-lg border border-[#1A1A1A]/10 font-sans">
-                  💡 <strong className="text-[#1A1A1A]">Rule:</strong> {item.reason}
+                <p className="text-xs text-gray-700 bg-gray-50/80 p-3 rounded-2xl border border-gray-100 font-sans">
+                  💡 <strong className="text-gray-900">Rule:</strong> {item.reason}
                 </p>
               </div>
             ))}
@@ -869,38 +869,50 @@ export const PracticeHubView: React.FC<PracticeHubViewProps> = ({
       {/* ================= MODE 3: SENTENCE ARCHITECTURE BUILDER ================= */}
       {activeMode === 'word_builder' && (
         <div className="space-y-4">
-          <div className="rounded-xl bg-[#F7F5F0] border border-[#1A1A1A]/10 p-4 text-xs sm:text-sm text-[#1A1A1A]">
-            <p className="font-serif italic font-bold text-base text-[#1A1A1A]">
+          <div className="rounded-2xl bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 p-4 text-xs sm:text-sm text-gray-900 shadow-2xs">
+            <p className="font-serif italic font-bold text-base text-indigo-950">
               🏗️ Sentence Architecture Builder: Core English Blueprint Models
             </p>
-            <p className="text-xs text-[#1A1A1A]/70 font-sans mt-0.5">
-              Master the foundational English word order: <strong>Subject + Verb + Object + Place + Time</strong>.
+            <p className="text-xs text-indigo-900/80 font-sans mt-0.5">
+              Master the foundational English word order: <strong>Subject + Verb + Object + Place + Time</strong>. Prepared and created by <strong className="text-indigo-900">Ms. Maria</strong>.
             </p>
           </div>
 
           <div className="space-y-4">
             {SENTENCE_BUILDER_EXERCISES.map((item, idx) => (
-              <div key={item.id} className="rounded-2xl border border-[#1A1A1A]/10 bg-white p-5 space-y-4">
-                <div className="flex items-center justify-between border-b border-[#1A1A1A]/10 pb-2">
-                  <h4 className="font-serif italic font-bold text-base text-[#1A1A1A]">
+              <div key={item.id} className="rounded-3xl border border-indigo-100 bg-white p-5 space-y-4 shadow-2xs">
+                <div className="flex items-center justify-between border-b border-gray-100 pb-2">
+                  <h4 className="font-serif italic font-bold text-base text-gray-900">
                     {item.title}
                   </h4>
                   <AudioButton text={item.full} size="sm" label="Listen" />
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2">
-                  {item.parts.map((p, pIdx) => (
-                    <div key={pIdx} className="rounded-xl border border-[#1A1A1A]/10 bg-[#F7F5F0] p-3 text-center">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#1A1A1A]/50 block mb-0.5">
-                        {p.role}
-                      </span>
-                      <span className="text-xs sm:text-sm font-bold text-[#1A1A1A]">{p.text}</span>
-                    </div>
-                  ))}
+                <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2.5">
+                  {item.parts.map((p, pIdx) => {
+                    const colors = [
+                      'bg-rose-50 border-rose-200 text-rose-900 text-rose-600',
+                      'bg-amber-50 border-amber-200 text-amber-900 text-amber-600',
+                      'bg-emerald-50 border-emerald-200 text-emerald-900 text-emerald-600',
+                      'bg-sky-50 border-sky-200 text-sky-900 text-sky-600',
+                      'bg-purple-50 border-purple-200 text-purple-900 text-purple-600',
+                    ];
+                    const chosen = colors[pIdx % colors.length];
+                    const [bg, border, text, label] = chosen.split(' ');
+
+                    return (
+                      <div key={pIdx} className={`rounded-2xl border ${border} ${bg} p-3 text-center shadow-2xs`}>
+                        <span className={`text-[10px] font-bold uppercase tracking-widest ${label} block mb-0.5`}>
+                          {p.role}
+                        </span>
+                        <span className={`text-xs sm:text-sm font-bold ${text}`}>{p.text}</span>
+                      </div>
+                    );
+                  })}
                 </div>
 
-                <div className="rounded-xl border border-[#1A1A1A]/10 bg-[#FDFCF9] p-3 text-xs sm:text-sm text-[#1A1A1A] font-sans">
-                  <span className="font-bold text-[#1A1A1A] uppercase tracking-wider text-[10px] block mb-0.5">Full Sentence:</span>
+                <div className="rounded-2xl border border-indigo-100 bg-indigo-50/40 p-3.5 text-xs sm:text-sm text-indigo-950 font-sans">
+                  <span className="font-bold text-indigo-600 uppercase tracking-wider text-[10px] block mb-0.5">Full Sentence:</span>
                   <span className="font-serif italic font-bold text-base">"{item.full}"</span>
                 </div>
               </div>
