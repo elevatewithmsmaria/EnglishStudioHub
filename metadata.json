@@ -1,0 +1,6 @@
+{
+  "name": "English Studio Hub by Ms. Maria",
+  "description": "An interactive English grammar learning studio designed for students, featuring 12 comprehensive modules (Nouns through Punctuation & Mechanics) with diagnostic evaluations, a 100-question grand assessment, non-repetitive daily practice with easy/medium/hard difficulties, calming background study soundscapes, a dedicated two-way Student & Teacher Chat channel with speech synthesis, and a secure password-protected teacher portal for Ms. Maria.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
